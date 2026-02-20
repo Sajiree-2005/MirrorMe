@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MirrorMe Design System — Calming Mental Health Platform */
+/* All colors MUST be HSL */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+@layer base {
+  :root {
+    /* === BACKGROUNDS === */
+    --background: 220 30% 97%;
+    --foreground: 225 25% 20%;
+
+    /* === CARDS & SURFACES === */
+    --card: 0 0% 100%;
+    --card-foreground: 225 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 25% 20%;
+
+    /* === BRAND COLORS === */
+    /* Primary: Soft Periwinkle Blue */
+    --primary: 225 60% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 225 70% 75%;
+    --primary-glow: 225 80% 85%;
+
+    /* Secondary: Lavender */
+    --secondary: 265 45% 91%;
+    --secondary-foreground: 265 35% 35%;
+
+    /* Accent: Soft Violet */
+    --accent: 265 50% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 265 60% 90%;
+
+    /* Muted tones */
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 15% 55%;
+
+    /* Semantic */
+    --destructive: 0 72% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 152 60% 93%;
+
+    --warning: 38 90% 55%;
+    --warning-foreground: 30 40% 20%;
+    --warning-light: 38 90% 93%;
+
+    --crisis: 0 72% 62%;
+    --crisis-light: 0 72% 95%;
+
+    /* === UI ELEMENTS === */
+    --border: 220 20% 88%;
+    --input: 220 20% 92%;
+    --ring: 225 60% 58%;
+    --radius: 0.875rem;
+
+    /* === SIDEBAR === */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 225 25% 30%;
+    --sidebar-primary: 225 60% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 40% 95%;
+    --sidebar-accent-foreground: 225 60% 45%;
+    --sidebar-border: 220 20% 91%;
+    --sidebar-ring: 225 60% 58%;
+
+    /* === GRADIENTS === */
+    --gradient-hero: linear-gradient(135deg, hsl(220 35% 96%), hsl(265 40% 93%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 30% 98%));
+    --gradient-lavender: linear-gradient(135deg, hsl(265 60% 95%), hsl(220 50% 93%));
+    --gradient-calm: linear-gradient(180deg, hsl(220 35% 98%), hsl(265 30% 96%));
+
+    /* === SHADOWS === */
+    --shadow-soft: 0 4px 24px -4px hsl(225 40% 60% / 0.12);
+    --shadow-card: 0 2px 16px -2px hsl(225 40% 50% / 0.08);
+    --shadow-glow: 0 0 32px hsl(225 60% 58% / 0.2);
+    --shadow-elevated: 0 8px 32px -8px hsl(225 40% 50% / 0.18);
+
+    /* === EMOTION COLORS === */
+    --emotion-anxiety: 38 90% 55%;
+    --emotion-stress: 15 80% 58%;
+    --emotion-grief: 225 45% 55%;
+    --emotion-loneliness: 265 45% 60%;
+    --emotion-burnout: 0 55% 58%;
+    --emotion-positive: 152 55% 45%;
+  }
+
+  .dark {
+    --background: 225 25% 10%;
+    --foreground: 220 30% 94%;
+    --card: 225 22% 14%;
+    --card-foreground: 220 30% 94%;
+    --popover: 225 22% 14%;
+    --popover-foreground: 220 30% 94%;
+    --primary: 225 60% 65%;
+    --primary-foreground: 225 25% 8%;
+    --secondary: 265 30% 20%;
+    --secondary-foreground: 265 40% 80%;
+    --muted: 225 20% 18%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 265 45% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 20% 22%;
+    --input: 225 20% 18%;
+    --ring: 225 60% 65%;
+    --sidebar-background: 225 25% 8%;
+    --sidebar-foreground: 220 25% 80%;
+    --sidebar-primary: 225 60% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 25% 14%;
+    --sidebar-accent-foreground: 225 50% 70%;
+    --sidebar-border: 225 20% 15%;
+    --sidebar-ring: 225 60% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Lora', serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-lavender {
+    background: var(--gradient-lavender);
+  }
+  .gradient-calm {
+    background: var(--gradient-calm);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Emotion badge utilities */
+  .emotion-anxiety { background-color: hsl(var(--emotion-anxiety) / 0.15); color: hsl(var(--emotion-anxiety)); }
+  .emotion-stress { background-color: hsl(var(--emotion-stress) / 0.15); color: hsl(var(--emotion-stress)); }
+  .emotion-grief { background-color: hsl(var(--emotion-grief) / 0.15); color: hsl(var(--emotion-grief)); }
+  .emotion-loneliness { background-color: hsl(var(--emotion-loneliness) / 0.15); color: hsl(var(--emotion-loneliness)); }
+  .emotion-burnout { background-color: hsl(var(--emotion-burnout) / 0.15); color: hsl(var(--emotion-burnout)); }
+  .emotion-positive { background-color: hsl(var(--emotion-positive) / 0.15); color: hsl(var(--emotion-positive)); }
+}
